@@ -26,6 +26,12 @@ ready do
   require './lib/multilang.rb'
 end
 
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.host          = '101.132.191.3'
+  deploy.path          = '/srv/www/site'
+end
+
 activate :sprockets
 
 activate :autoprefixer do |config|
